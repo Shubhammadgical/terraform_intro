@@ -420,3 +420,11 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     It’s a good idea to remove all of the resources you created so that AWS doesn’t charge you for them. Because Terraform keeps track of what resources you created, cleanup is simple. All you need to do is run the destroy command.
 
     It goes without saying that you should rarely, if ever, run destroy in a production environment! There’s no “undo” for the destroy command, so Terraform gives you one final chance to review what you’re doing, showing you the list of all the resources you’re about to delete, and prompting you to confirm the deletion. If everything looks good, type yes and hit Enter; Terraform will build the dependency graph and delete all of the resources in the correct order, using as much parallelism as possible. In a minute or two, your AWS account should be clean again.
+
+#Steps to run the code after we configure AWS account and Terraform on our machine.
+
+terraform init
+terraform plan
+terraform graph (show you the dependency graph)
+terraform apply
+terraform destroy

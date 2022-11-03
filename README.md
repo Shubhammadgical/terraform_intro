@@ -1,6 +1,7 @@
 Hello guys my self shubham Chaurasia and in this repo we discussed about Introduction to Terraform step-by-step.
 
-1.  Set up your AWS account
+# Set up your AWS account
+
     First you need to make your AWS account and after login you need to create a new IAM user because when you first register for AWS, you initially sign in as the root user. Who has access permissions to do anything in the account and it is not a good idea to use root user thats why we create new IAM user where you manage user accounts as well as the permissions for each user.
 
     1. To create a new IAM user, go to the IAM Console, click Users, and then click the Add Users button. Enter a name for the user, and make sure “Access key — Programmatic access” is selected. Click the Next button.
@@ -8,7 +9,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     3. Click Next a couple more times and then the “Create user” button. AWS will show you the security credentials for that user, which consist of an Access Key ID and a Secret Access Key. These credentials give access to your AWS account, so store them somewhere secure.
     4. After you’ve saved your credentials, click the Close button. You’re now ready to move on to using Terraform.
 
-2.  Install Terraform
+# Install Terraform
+
     Install Terraform manually by going to the Terraform home page, clicking the download link, selecting the appropriate package for your operating system, downloading the ZIP archive, and unzipping it into the directory where you want Terraform to be installed. The archive will extract a single binary called terraform, add the PATH of your directory where you unzip the package in environment variable.
 
     Run terraform command for checking the terraform is working properly or not. You got terraform related commands if terraform is working properly.
@@ -27,7 +29,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
 
     In addition to environment variables, Terraform supports the same authentication mechanisms as all AWS CLI and SDK tools. Therefore, it’ll also be able to use credentials in $HOME/.aws/credentials, which are automatically generated if you run aws configure, or IAM roles, which you can add to almost any resource in AWS.
 
-3.  Deploy a single server
+# Deploy a single server
+
     I use Visual Studio Code but you can use any text editor like Sublime Text, Atom, and IntelliJ etc.
 
     1.  Create an empty folder and put a file in it called main.tf that contains the following contents:
@@ -84,7 +87,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     And whenever you want to see changes your teammates have made, you can pull them from origin:
     git pull origin main
 
-4.  Deploy a single web server
+# Deploy a single web server
+
     Since the dummy web server in this example is just a one-liner that uses busybox, You pass a shell script to User Data by setting the user_data argument in your Terraform code as follows:
 
     resource "aws_instance" "example" {
@@ -151,7 +155,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     $ curl http://<EC2_INSTANCE_PUBLIC_IP>:8080
     Hello, World
 
-5.  Deploy a configurable web server
+# Deploy a configurable web server
+
     To allow you to make your code more DRY and more configurable, Terraform allows you to define input variables. Here’s the syntax for declaring a variable:
     variable "NAME" {
     [CONFIG ...]
@@ -177,7 +182,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     }
     Run terraform apply command and you will see the output message which you defined.
 
-6.  Deploy a cluster of web servers
+# Deploy a cluster of web servers
+
     An ASG takes care of a lot of tasks for you completely automatically, including launching a cluster of EC2 Instances, monitoring the health of each Instance, replacing failed Instances, and adjusting the size of the cluster in response to load.
 
     The first step in creating an ASG is to create a launch configuration, which specifies how to configure each EC2 Instance in the ASG.
@@ -222,7 +228,7 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     nohup busybox httpd -f -p ${var.server_port} &
     EOF
 
-    # Required when using a launch configuration with an ASG.
+    #Required when using a launch configuration with an ASG.
 
     lifecycle {
     create_before_destroy = true
@@ -268,7 +274,8 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
 
     At this point, you can deploy your ASG, but you’ll have a small problem: you now have multiple servers, each with its own IP address, but you typically want to give your end users only a single IP to use. One way to solve this problem is to deploy a load balancer.
 
-7.  Deploy a load balancer
+# Deploy a load balancer
+
     AWS offers three types of load balancers:
     Application Load Balancer (ALB).
     Network Load Balancer (NLB).
@@ -289,7 +296,7 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     port = 80
     protocol = "HTTP"
 
-    # By default, return a simple 404 page
+    #By default, return a simple 404 page
 
     default_action {
     type = "fixed-response"
@@ -309,7 +316,7 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
     resource "aws_security_group" "alb" {
     name = "terraform-example-alb"
 
-    # Allow inbound HTTP requests
+    #Allow inbound HTTP requests
 
     ingress {
     from_port = 80
@@ -416,12 +423,13 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
 
     add, commit, and push your change in your github repo.
 
-8.  Clean up
+# Clean up
+
     It’s a good idea to remove all of the resources you created so that AWS doesn’t charge you for them. Because Terraform keeps track of what resources you created, cleanup is simple. All you need to do is run the destroy command.
 
     It goes without saying that you should rarely, if ever, run destroy in a production environment! There’s no “undo” for the destroy command, so Terraform gives you one final chance to review what you’re doing, showing you the list of all the resources you’re about to delete, and prompting you to confirm the deletion. If everything looks good, type yes and hit Enter; Terraform will build the dependency graph and delete all of the resources in the correct order, using as much parallelism as possible. In a minute or two, your AWS account should be clean again.
 
-#Steps to run the code after we configure AWS account and Terraform on our machine.
+# Steps to run the code after we configure AWS account and Terraform on our machine.
 
 1. terraform init
 2. terraform plan

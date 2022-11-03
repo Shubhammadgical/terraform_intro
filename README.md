@@ -2,32 +2,34 @@ Hello guys my self shubham Chaurasia and in this repo we discussed about Introdu
 
 # Set up your AWS account
 
-    First you need to make your AWS account and after login you need to create a new IAM user because when you first register for AWS, you initially sign in as the root user. Who has access permissions to do anything in the account and it is not a good idea to use root user thats why we create new IAM user where you manage user accounts as well as the permissions for each user.
+First you need to make your AWS account and after login you need to create a new IAM user because when you first register for AWS, you initially sign in as the root user. Who has access permissions to do anything in the account and it is not a good idea to use root user thats why we create new IAM user where you manage user accounts as well as the permissions for each user.
 
-    1. To create a new IAM user, go to the IAM Console, click Users, and then click the Add Users button. Enter a name for the user, and make sure “Access key — Programmatic access” is selected. Click the Next button.
-    2. Add the AdministratorAccess Managed Policy to your IAM user.
-    3. Click Next a couple more times and then the “Create user” button. AWS will show you the security credentials for that user, which consist of an Access Key ID and a Secret Access Key. These credentials give access to your AWS account, so store them somewhere secure.
-    4. After you’ve saved your credentials, click the Close button. You’re now ready to move on to using Terraform.
+- To create a new IAM user, go to the IAM Console, click Users, and then click the Add Users button. Enter a name for the user, and make sure “Access key — Programmatic access” is selected. Click the Next button.
+- Add the AdministratorAccess Managed Policy to your IAM user.
+- Click Next a couple more times and then the “Create user” button. AWS will show you the security credentials for that user, which consist of an Access Key ID and a Secret Access Key. These credentials give access to your AWS account, so store them somewhere secure.
+- After you’ve saved your credentials, click the Close button. You’re now ready to move on to using Terraform.
 
 # Install Terraform
 
-    Install Terraform manually by going to the Terraform home page, clicking the download link, selecting the appropriate package for your operating system, downloading the ZIP archive, and unzipping it into the directory where you want Terraform to be installed. The archive will extract a single binary called terraform, add the PATH of your directory where you unzip the package in environment variable.
+Install Terraform manually by going to the Terraform home page, clicking the download link, selecting the appropriate package for your operating system, downloading the ZIP archive, and unzipping it into the directory where you want Terraform to be installed. The archive will extract a single binary called terraform, add the PATH of your directory where you unzip the package in environment variable.
 
-    Run terraform command for checking the terraform is working properly or not. You got terraform related commands if terraform is working properly.
+Run terraform command for checking the terraform is working properly or not. You got terraform related commands if terraform is working properly.
 
-    Now, you will need to set the AWS credentials for the IAM user you created earlier as the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. For example,
+Now, you will need to set the AWS credentials for the IAM user you created earlier as the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY. For example,
 
-    here is how you can do it in a Unix/Linux/macOS terminal:
-    $ export AWS_ACCESS_KEY_ID=(your access key id)
-    $ export AWS_SECRET_ACCESS_KEY=(your secret access key)
+here is how you can do it in a Unix/Linux/macOS terminal:
+```
+$ export AWS_ACCESS_KEY_ID=(your access key id)
+$ export AWS_SECRET_ACCESS_KEY=(your secret access key)
+```
+here is how you can do it in a Windows command terminal:
+```
+$ set AWS_ACCESS_KEY_ID=(your access key id)
+$ set AWS_SECRET_ACCESS_KEY=(your secret access key)
+```
+Note that these environment variables apply only to the current shell, so if you reboot your computer or open a new terminal window, you’ll need to export these variables again.
 
-    here is how you can do it in a Windows command terminal:
-    $ set AWS_ACCESS_KEY_ID=(your access key id)
-    $ set AWS_SECRET_ACCESS_KEY=(your secret access key)
-
-    Note that these environment variables apply only to the current shell, so if you reboot your computer or open a new terminal window, you’ll need to export these variables again.
-
-    In addition to environment variables, Terraform supports the same authentication mechanisms as all AWS CLI and SDK tools. Therefore, it’ll also be able to use credentials in $HOME/.aws/credentials, which are automatically generated if you run aws configure, or IAM roles, which you can add to almost any resource in AWS.
+In addition to environment variables, Terraform supports the same authentication mechanisms as all AWS CLI and SDK tools. Therefore, it’ll also be able to use credentials in $HOME/.aws/credentials, which are automatically generated if you run aws configure, or IAM roles, which you can add to almost any resource in AWS.
 
 # Deploy a single server
 

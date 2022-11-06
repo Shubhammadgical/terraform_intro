@@ -1,4 +1,6 @@
-This artical would guide us about Introduction of terraform. We shall discuss the following:
+# An Introduction to Terraform
+
+This article would guide us about Introduction of terraform. We shall discuss the following:
 
 1. Set up your AWS account
 2. Install Terraform

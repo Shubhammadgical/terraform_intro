@@ -1,4 +1,4 @@
-# An Introduction to Terraform
+# Terraform and Deployment of some servers.
 
 This article would guide us about Introduction of terraform. We shall discuss the following:
 

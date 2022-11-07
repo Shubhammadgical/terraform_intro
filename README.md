@@ -120,6 +120,7 @@ Remove code from line no. 7 to 14 and from line no. 20 to 151(I not provide a im
 ## Deploy a load balancer
 
 1. Add below code in main.tf.
+
 ![r5](https://user-images.githubusercontent.com/101810595/200260120-324d96b5-118e-489d-9c3f-ec33274c5b7a.PNG)
 ![r6](https://user-images.githubusercontent.com/101810595/200260127-6ae98d63-ec4b-4304-a5f8-834b9187c95f.PNG)
 ![r7](https://user-images.githubusercontent.com/101810595/200260134-0c701b01-209f-467a-980b-c94b5eda764c.PNG)

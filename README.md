@@ -91,7 +91,8 @@ Remove code from line no. 7 to 14 and from line no. 20 to 151(I not provide a im
 
 ## Deploy a configurable web server
 
-1. Add below code at the same line in main.tf.
+1. Add below code in main.tf.
+![r3](https://user-images.githubusercontent.com/101810595/200258868-45ab88cc-76ea-4df9-b8a7-9347bd62fdcb.PNG)
 
 2. Run below commands:
 

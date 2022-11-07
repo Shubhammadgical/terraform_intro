@@ -60,49 +60,74 @@ Remove code from line no. 7 to 14 and from line no. 20 to 151.
 ## Deploy a single server
 
 1. Run below commands:
+
+```
    terraform init
    terraform plan
    terraform apply
    terraform destroy
+```
 
 ## Deploy a single web server
 
 1. Add below code at the same line in main.tf.
 
 2. Run below commands:
+
+```
    terraform init
    terraform plan
-   terraform apply (Go to your aws instance and you’ll see your new EC2 Instance deploying. Click your new Instance, copy its public IP address in the description panel at the bottom of the screen. Give the Instance a minute or two to boot up, and then use a web browser or a tool like curl to make an HTTP request to this IP address at port 8080:)
+   terraform apply
+```
+
+3. Go to your aws instance and you’ll see your new EC2 Instance deploying. Click your new Instance, copy its public IP address in the description panel at the bottom of the screen. Give the Instance a minute or two to boot up, and then use a web browser or a tool like curl to make an HTTP request to this IP address at port 8080. Run below commands.
+
+```
    curl http://<EC2_INSTANCE_PUBLIC_IP>:8080
    terraform destroy
+```
 
 ## Deploy a configurable web server
 
 1. Add below code at the same line in main.tf.
 
 2. Run below commands:
+
+```
    terraform init
    terraform plan
    terraform apply
    terraform destroy
+```
 
 ## Deploy a cluster of web servers
 
 1. Add below code at the same line in main.tf.
 
 2. Run below commands:
+
+```
    terraform init
    terraform plan
    terraform apply
    terraform destroy
+```
 
 ## Deploy a load balancer
 
 1. Add below code at the same line in main.tf.
 
 2. Run below commands:
+
+```
    terraform init
    terraform plan
-   terraform apply (After running terraform apply you got a url in alb_dns_name outputs.)
+   terraform apply
+```
+
+3. After running terraform apply you got a url in alb_dns_name outputs. Run below commands
+
+```
    Run curl http://<alb_dns_name>
    terraform destroy
+```

@@ -105,7 +105,8 @@ Remove code from line no. 7 to 14 and from line no. 20 to 151(I not provide a im
 
 ## Deploy a cluster of web servers
 
-1. Add below code at the same line in main.tf.
+1. Add below code in main.tf.
+![r4](https://user-images.githubusercontent.com/101810595/200259316-e09f64de-588a-449e-b6b8-4c278d51d717.PNG)
 
 2. Run below commands:
 

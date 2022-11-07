@@ -2,16 +2,16 @@
 
 This article would guide us about Introduction of terraform. We shall discuss the following:
 
-1. Set up your AWS account
-2. Install Terraform
-3. Deploy a single server
-4. Deploy a single web server
-5. Deploy a configurable web server
-6. Deploy a cluster of web servers
-7. Deploy a load balancer
-8. Clean up
+1. Deploy a single server
+2. Deploy a single web server
+3. Deploy a configurable web server
+4. Deploy a cluster of web servers
+5. Deploy a load balancer
+6. Clean up
 
 I took inspiration from this [article](https://blog.gruntwork.io/an-introduction-to-terraform-f17df9c6d180#a9b0) and you should first read this blog to understand the steps properly.
+
+# Installing / Getting started
 
 Install Terraform [video](https://www.youtube.com/watch?v=Cn6xYf0QJME)
 

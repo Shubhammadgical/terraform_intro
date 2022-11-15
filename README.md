@@ -39,7 +39,7 @@ terraform plan
 terraform graph
 ```
 
-4. Run terraform apply command. I perform the plan.
+4. Run terraform apply command. It perform the plan.
 
 ```
 terraform apply
